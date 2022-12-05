@@ -37,16 +37,6 @@ async function run() {
             res.json(result);
         });
 
-
-        // Update Datas API
-        app.put('/datas', async (req, res) => {
-            const catagoryy = req.body.datas.catagory;
-            const filter = { catagory: catagoryy };
-            const updateDoc = { $set: { catagory: 'in-progress' } };
-            const result = await datasCollection.updateOne(filter, updateDoc);
-            res.json(result);
-        })
-
     }
     finally {
         // await client.close();
